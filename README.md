@@ -6,8 +6,6 @@
 * Docker
 * PostgreSQL
 
-<hr>
-
 ## Run the project
 * Go to directory of the project
 * Run ```make image``` to build the image
