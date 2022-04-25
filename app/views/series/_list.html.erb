@@ -1,0 +1,14 @@
+<div class="py-5" id="series">
+    <h2 class="pb-2 border-bottom">Latest Series</h2>
+    <div class="row row-cols-1 row-cols-lg-3 py-3">
+        <% @series.each do |series| %>
+            <div class="col">
+                <div class="bg-light p-5 border rounded-3">
+                    <h2><%= series.title %></h2>
+                    <p><%= truncate(series.description, length: 100) %></p>
+                    <%= link_to "Show this series", series, class: 'icon-link '%>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>
