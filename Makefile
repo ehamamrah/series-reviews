@@ -18,3 +18,6 @@ migrate-db:
 
 bundle:
 	docker exec -it web-server bundle install
+
+import-data:
+	docker exec -it web-server rake data_importer:import
