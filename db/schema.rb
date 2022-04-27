@@ -10,9 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_25_231558) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_26_235040) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "actors", force: :cascade do |t|
+    t.string "name"
+    t.bigint "series_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["series_id"], name: "index_actors_on_series_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.bigint "series_id", null: false
+    t.string "user"
+    t.integer "stars"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["series_id"], name: "index_reviews_on_series_id"
+  end
 
   create_table "series", force: :cascade do |t|
     t.string "title"
@@ -27,4 +45,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_25_231558) do
     t.text "description"
   end
 
+  create_table "shoot_locations", force: :cascade do |t|
+    t.string "name"
+    t.bigint "series_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["series_id"], name: "index_shoot_locations_on_series_id"
+  end
+
+  add_foreign_key "actors", "series"
+  add_foreign_key "reviews", "series"
+  add_foreign_key "shoot_locations", "series"
 end

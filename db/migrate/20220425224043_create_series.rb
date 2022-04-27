@@ -6,7 +6,6 @@ class CreateSeries < ActiveRecord::Migration[7.0]
       t.integer :seasons
       t.date :first_release
       t.string :director
-      t.string :shoot_location
       t.string :country
 
       t.timestamps

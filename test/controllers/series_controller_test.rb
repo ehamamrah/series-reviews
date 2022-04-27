@@ -17,7 +17,7 @@ class SeriesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create series" do
     assert_difference("Series.count") do
-      post series_index_url, params: { series: { country: @series.country, director: @series.director, first_release: @series.first_release, genre: @series.genre, seasons: @series.seasons, shoot_location: @series.shoot_location, title: @series.title } }
+      post series_index_url, params: { series: { country: @series.country, director: @series.director, first_release: @series.first_release, genre: @series.genre, seasons: @series.seasons, title: @series.title } }
     end
 
     assert_redirected_to series_url(Series.last)
@@ -34,7 +34,7 @@ class SeriesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update series" do
-    patch series_url(@series), params: { series: { country: @series.country, director: @series.director, first_release: @series.first_release, genre: @series.genre, seasons: @series.seasons, shoot_location: @series.shoot_location, title: @series.title } }
+    patch series_url(@series), params: { series: { country: @series.country, director: @series.director, first_release: @series.first_release, genre: @series.genre, seasons: @series.seasons, title: @series.title } }
     assert_redirected_to series_url(@series)
   end
 

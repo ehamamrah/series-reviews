@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @shoot_location %>
+
+<div>
+  <%= link_to "Edit this shoot location", edit_shoot_location_path(@shoot_location) %> |
+  <%= link_to "Back to shoot locations", shoot_locations_path %>
+
+  <%= button_to "Destroy this shoot location", @shoot_location, method: :delete %>
+</div>

@@ -6,7 +6,6 @@ one:
   seasons: 1
   first_release: 2022-04-25
   director: MyString
-  shoot_location: MyString
   country: MyString
 
 two:
@@ -15,5 +14,4 @@ two:
   seasons: 1
   first_release: 2022-04-25
   director: MyString
-  shoot_location: MyString
   country: MyString

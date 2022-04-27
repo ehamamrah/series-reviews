@@ -8,6 +8,9 @@ class SeriesController < ApplicationController
 
   # GET /series/1 or /series/1.json
   def show
+    if !@series.present?
+      redirect_to root_path, notice: 'Series not found.'
+    end
   end
 
   # GET /series/new
@@ -60,11 +63,11 @@ class SeriesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_series
-      @series = Series.find(params[:id])
+      @series = Series.find_by(id: params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def series_params
-      params.require(:series).permit(:title, :genre, :seasons, :first_release, :director, :shoot_location, :country, :description)
+      params.require(:series).permit(:title, :genre, :seasons, :first_release, :director, :country, :description)
     end
 end

@@ -19,7 +19,6 @@ class SeriesTest < ApplicationSystemTestCase
     fill_in "First release", with: @series.first_release
     fill_in "Genre", with: @series.genre
     fill_in "Seasons", with: @series.seasons
-    fill_in "Shoot location", with: @series.shoot_location
     fill_in "Title", with: @series.title
     click_on "Create Series"
 
@@ -36,7 +35,6 @@ class SeriesTest < ApplicationSystemTestCase
     fill_in "First release", with: @series.first_release
     fill_in "Genre", with: @series.genre
     fill_in "Seasons", with: @series.seasons
-    fill_in "Shoot location", with: @series.shoot_location
     fill_in "Title", with: @series.title
     click_on "Update Series"
 
