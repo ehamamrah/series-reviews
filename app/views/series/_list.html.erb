@@ -4,9 +4,16 @@
         <% @series.each do |series| %>
             <div class="col">
                 <div class="bg-light p-5 border rounded-3">
-                    <h2><%= series.title %></h2>
-                    <p><%= truncate(series.description, length: 100) %></p>
-                    <%= link_to "Show this series", series, class: 'icon-link '%>
+                    <div class="row">
+                        <div class="col-10">
+                            <h3><%= series.title %></h3>
+                        </div>
+                        <div class="col-2">
+                            <span class="badge rounded-pill bg-info text-dark"><%= series.over_all_rating %></span>
+                        </div>
+                        <p><%= truncate(series.description, length: 100) %></p>
+                        <%= link_to "Show this series", series, class: 'icon-link '%>
+                    </div>
                 </div>
             </div>
         <% end %>
