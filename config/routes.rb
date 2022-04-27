@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :series
 
   root "series#index"
+  get '/search', to: 'series#search', as: 'search'
 end

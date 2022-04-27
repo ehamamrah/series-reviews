@@ -1,0 +1,20 @@
+<div class='container mt-5 py-5 h-100 p-5 text-dark bg-light rounded-3 border'>
+    <div class='row'>
+        <div class='col text-dark'>
+            <h2>Looking for actors newest series?</h2>
+            <p>
+                We offer multiple ways to find your favorite actors newest series, you can search by actor name and we do the needful.
+            </p>
+        </div>
+        <div class='col'>
+            <%= form_tag search_path, method: :get, class: 'row mx-auto my-auto' do %>
+                <div class="col">
+                    <%= search_field_tag :search, params[:search], label: false, required: true, placeholder: "Enter actor name", class: 'form-control form-control-lg' %>
+                </div>
+                <div class="col">    
+                    <%= submit_tag 'Search', class:'btn btn-primary btn-lg' %>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>

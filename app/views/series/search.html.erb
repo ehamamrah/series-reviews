@@ -1,0 +1,27 @@
+<div class="pt-4" id="series">
+    <h2 class="pb-2 border-bottom">Search Results</h2>
+    <div class="row row-cols-1 py-3">
+        <% if @series.present? %>
+            <% @series.each do |series| %>
+                <div class="col">
+                    <div class="bg-light p-5 border rounded-3">
+                        <div class="row">
+                            <div class="col-10">
+                                <h3><%= series.title %></h3>
+                            </div>
+                            <div class="col-2">
+                                <span class="badge rounded-pill bg-info text-dark"><%= series.over_all_rating %></span>
+                            </div>
+                            <p><%= truncate(series.description, length: 100) %></p>
+                            <%= link_to "Show", series, class: 'icon-link '%>
+                        </div>
+                    </div>
+                </div>
+            <% end %>
+        <% else %>
+            <div class="col text-center">
+                <h3>No results found</h3>
+            </div>
+        <% end %>
+    </div>
+</div>

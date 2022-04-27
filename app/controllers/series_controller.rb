@@ -60,6 +60,16 @@ class SeriesController < ApplicationController
     end
   end
 
+  def search
+    @series = nil
+    if params[:search].present?
+      search_key = '%' + params[:search].downcase + '%'
+      @series = Series.joins(:actors).where("lower(actors.name) LIKE ?", search_key)
+    end
+
+    @series
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_series
