@@ -9,6 +9,7 @@
 ## Run the project
 * Go to directory of the project
 * Run ```make image``` to build the image
+* Generate .env file and add ```POSTGRES_PASSWORD``` to it.
 * Run Server & DB Container using command ```make services``` or ```make services-d``` to run it background
 * Run ```make create-db``` to create the database
 * To run any migrations use ```make migrate-db```
